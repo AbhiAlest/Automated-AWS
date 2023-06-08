@@ -8,11 +8,11 @@
     <img src="https://img.shields.io/github/issues-pr/AbhiAlest/Automated-AWS.svg" alt = "Pull Requests" >
     <img src="https://img.shields.io/github/watchers/AbhiAlest/Automated-AWS.svg" alt = "Watchers" >
     <img src="https://img.shields.io/github/stars/AbhiAlest/Automated-AWS.svg" alt = "Stars" >
-</p>
+  </p>
   
-<p align="center">
-Open source [Go] (https://go.dev/) package that automates provisioning and management of AWS resources.
-</p>
+
+Open-source [Go](https://go.dev/) package that automates provisioning and management of AWS resources.
+
 
 <br />  
 
