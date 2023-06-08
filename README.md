@@ -19,6 +19,8 @@ Go package that automates provisioning and management of AWS resources.
 </p>
 <br />  
 
+  ---
+  
 <h2 align="center">File Structure</h1>
 
   <p> 
