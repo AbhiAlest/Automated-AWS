@@ -10,16 +10,12 @@
     <img src="https://img.shields.io/github/stars/AbhiAlest/Automated-AWS.svg" alt = "Stars" >
 </p>
   
- 
-
-  
-  
 <p align="center">
 Go package that automates provisioning and management of AWS resources.
 </p>
+
 <br />  
 
-  ---
   
 <h2 align="center">File Structure</h1>
 
