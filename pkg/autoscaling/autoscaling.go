@@ -4,7 +4,7 @@ import (
 	"github.com/aws/aws-sdk-go/aws"
 	"github.com/aws/aws-sdk-go/aws/session"
 	"github.com/aws/aws-sdk-go/service/autoscaling"
-	"github.com/your-username/your-tool/config"
+	"github.com/AbhiAlest/Automated-AWS/config"
 )
 
 func CreateAutoScalingGroup() {
