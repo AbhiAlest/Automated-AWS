@@ -19,7 +19,6 @@ Go package that automates provisioning and management of AWS resources.
   
 <h2 align="center">File Structure</h1>
 
-  <p> 
   ```
     Automated-AWS/<br />
     ├── cmd/<br />
@@ -32,5 +31,5 @@ Go package that automates provisioning and management of AWS resources.
         └── autoscaling/<br />
             └── autoscaling.go<br />
   ```
-    </p>
+   
 <br />
