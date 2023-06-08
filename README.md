@@ -10,9 +10,9 @@
     <img src="https://img.shields.io/github/stars/AbhiAlest/Automated-AWS.svg" alt = "Stars" >
   </p>
   
-<div style="text-align: center;">
-Open-source [Go](https://go.dev/) package that automates provisioning and management of AWS resources.
-</div>
+
+   Open-source [Go](https://go.dev/) package that automates provisioning and management of AWS resources.
+
 
 <br />  
 
