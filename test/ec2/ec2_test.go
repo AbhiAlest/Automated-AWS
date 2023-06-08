@@ -3,7 +3,7 @@ package ec2_test
 import (
 	"testing"
 
-	"github.com/your-username/your-tool/pkg/ec2"
+	"github.com/AbhiAlest/Automated-AWS/pkg/ec2"
 )
 
 func TestCreateEC2Instance(t *testing.T) {
