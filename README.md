@@ -11,7 +11,7 @@
 </p>
   
 <p align="center">
-Open source [Go](https://go.dev/) package that automates provisioning and management of AWS resources.
+Open source [Go] (https://go.dev/) package that automates provisioning and management of AWS resources.
 </p>
 
 <br />  
