@@ -4,28 +4,13 @@
 <div align="center">
   <p> 
     <img src="https://img.shields.io/github/license/AbhiAlest/Automated-AWS.svg" alt = "License" >
-</p>
-  
-<div align="center">
-  <p> 
     <img src="https://img.shields.io/github/issues/AbhiAlest/Automated-AWS.svg" alt = "Issues" >
+    <img src="https://img.shields.io/github/issues-pr/AbhiAlest/Automated-AWS.svg" alt = "Pull Requests" >
+    <img src="https://img.shields.io/github/watchers/AbhiAlest/Automated-AWS.svg" alt = "Watchers" >
+    <img src="https://img.shields.io/github/stars/AbhiAlest/Automated-AWS.svg" alt = "Stars" >
 </p>
   
-<div align="center">
-  <p> 
-    <img src="https://img.shields.io/github/issues-pr/AbhiAlest/Automated-AWS.svg" alt = "Pull Requests" >
-</p>  
-
-  
-<div align="center">
-  <p> 
-    <img src="https://img.shields.io/github/watchers/AbhiAlest/Automated-AWS.svg" alt = "Watchers" >
-</p>  
-  
-<div align="center">
-  <p> 
-    <img src="https://img.shields.io/github/stars/AbhiAlest/Automated-AWS.svg" alt = "Stars" >
-</p>  
+ 
 
   
   
