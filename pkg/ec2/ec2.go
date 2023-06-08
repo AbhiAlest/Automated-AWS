@@ -9,6 +9,11 @@ import (
 )
 
 func CreateEC2Instance() {
+	
+	// credentials
+	creds := config.GetAWSCredentials()
+	
+	// start session
 	sess, err := session.NewSession(&aws.Config{
 		Region: aws.String(config.AWSRegion),
 	})
