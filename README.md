@@ -20,16 +20,28 @@
 <h2>File Structure</h2>
 
   ```
-    Automated-AWS/
-    ├── cmd/
-    │   └── main.go
-    └── pkg/
-        ├── ec2/
-        │   └── ec2.go
-        ├── elbv2
-        │   └── elbv2.go
-        └── autoscaling/
-            └── autoscaling.go
+Automated-AWS
+├── cmd
+│   └── main.go
+├── config
+│   └── aws.go
+├── pkg
+│   ├── autoscaling
+│   │   └── autoscaling.go
+│   ├── ec2
+│   │   └── ec2.go
+│   └── elbv2
+│       └── elbv2.go
+├── test
+│   ├── autoscaling
+│   │   └── autoscaling_test.go
+│   ├── ec2
+│   │   └── ec2_test.go
+│   └── elbv2
+│       └── elbv2_test.go
+├── README.md
+└── LICENSE
+
   ```
    
 <br />
