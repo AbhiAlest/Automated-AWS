@@ -19,4 +19,19 @@ Go package that automates provisioning and management of AWS resources.
 </p>
 <br />  
 
----
+<h2 align="center">File Structure</h1>
+
+  <div align="center">
+  <p> 
+    Automated-AWS/<br />
+    ├── cmd/<br />
+    │   └── main.go<br />
+    └── pkg/<br />
+        ├── ec2/<br />
+        │   └── ec2.go<br />
+        ├── elbv2/<br />
+        │   └── elbv2.go<br />
+        └── autoscaling/<br />
+            └── autoscaling.go<br />
+    </p>
+<br />
