@@ -1,8 +1,8 @@
 <h1 align="center">Automated AWS</h1>
 <br />
 
-<div align="center">
-  <p> 
+
+  <p align="center">  
     <img src="https://img.shields.io/github/license/AbhiAlest/Automated-AWS.svg" alt = "License" >
     <img src="https://img.shields.io/github/issues/AbhiAlest/Automated-AWS.svg" alt = "Issues" >
     <img src="https://img.shields.io/github/issues-pr/AbhiAlest/Automated-AWS.svg" alt = "Pull Requests" >
