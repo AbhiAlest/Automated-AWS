@@ -11,7 +11,7 @@
   </p>
   
 
-   Open-source [Go](https://go.dev/) package that automates provisioning and management of AWS resources.
+   Automated-AWS is an open-source [Go](https://go.dev/) package that automates provisioning and management of AWS resources. It consists of ec2, elbv2, and autoscaling management.
 
 
 <br />  
