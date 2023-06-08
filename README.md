@@ -5,8 +5,30 @@
   <p> 
     <img src="https://img.shields.io/github/license/AbhiAlest/Automated-AWS.svg" alt = "License" >
 </p>
+  
+<div align="center">
+  <p> 
+    <img src="https://img.shields.io/github/issues/AbhiAlest/Automated-AWS.svg" alt = "Issues" >
+</p>
+  
+<div align="center">
+  <p> 
+    <img src="https://img.shields.io/github/issues-pr/AbhiAlest/Automated-AWS.svg" alt = "Pull Requests" >
+</p>  
 
+  
+<div align="center">
+  <p> 
+    <img src="https://img.shields.io/github/watchers/AbhiAlest/Automated-AWS.svg" alt = "Watchers" >
+</p>  
+  
+<div align="center">
+  <p> 
+    <img src="https://img.shields.io/github/stars/AbhiAlest/Automated-AWS.svg" alt = "Stars" >
+</p>  
 
+  
+  
 <p align="center">
 Go package that automates provisioning and management of AWS resources.
 </p>
