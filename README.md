@@ -44,7 +44,6 @@ cd Automated-AWS
 Install the Go dependencies:
 
 ```go
-Copy code
 go mod download
 ```
 
