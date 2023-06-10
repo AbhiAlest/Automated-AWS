@@ -1,0 +1,49 @@
+# Compiled Object files, Static and Dynamic libs (Shared Objects)
+*.o
+*.a
+*.so
+
+# Executables
+*.exe
+*.out
+
+# Go specific
+*.test
+
+# Dependency directories
+/vendor/
+/go.sum
+/go.mod
+
+# Output files
+*.log
+*.zip
+*.tar.gz
+
+# IDE-specific files
+.vscode/
+.idea/
+
+# Environment-specific files
+.env
+
+# macOS specific files
+.DS_Store
+
+# Backup files
+*~
+
+# Build output directory
+/build/
+
+# Temporary files
+.tmp/
+
+# Ignore generated mocks
+**/mocks/
+
+# Ignore AWS credentials file
+~/.aws/credentials
+
+# Ignore private configuration files
+/config/private.conf
