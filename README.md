@@ -63,12 +63,12 @@ go run main.go
 ```
 If you want to run the application in a Docker container, build the Docker image first:
 
-```docker
+```bash
 docker build -t myapp .
 ```
 
 Then, run the Docker container:
-```docker
+```bash
 docker run -p 8080:8080 myapp
 ```
 
