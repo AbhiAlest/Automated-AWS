@@ -16,7 +16,81 @@
 
 <br />  
 
-  
+<h2>Setting Up Development Environment</h2>
+To set up the development environment for the project, follow the steps below:
+
+<h3>Prerequisites</h3>
+Make sure you have the following prerequisites installed on your system:
+
+* Go (version 1.16 or later)
+* Docker (optional, if you want to run the application in a container)
+* AWS CLI (optional, if you want to interact with AWS services)
+
+<h3>Clone the Repository</h3>
+Clone the project repository from the GitHub repository:
+
+```bash
+git clone https://github.com/AbhiAlest/Automated-AWS.git
+```
+
+<h3>Install Dependencies</h3>
+
+Change to the project directory:
+
+```bash
+cd Automated-AWS
+```
+
+Install the Go dependencies:
+
+```go
+Copy code
+go mod download
+```
+
+<h3>Configure AWS Credentials (if applicable)</h3>
+If your code interacts with AWS services and you want to run it locally, configure the AWS CLI with your credentials:
+
+```
+aws configure
+```
+
+<h3>Build and Run</h3>
+To build and run the project, use the following command:
+
+```go
+go run main.go
+```
+If you want to run the application in a Docker container, build the Docker image first:
+
+```docker
+docker build -t myapp .
+```
+
+Then, run the Docker container:
+```docker
+docker run -p 8080:8080 myapp
+```
+
+<h3>Running Tests</h3>
+To run the tests, use the following command:
+
+```bash
+go test ./...
+```
+
+<h3>Development Workflow</h3>
+1. Make the necessary code changes in the project files.
+2. Run the application or tests to verify your changes.
+3. Commit the changes to your local Git repository.
+4. Push the changes to the remote Git repository (if applicable).
+
+Additional configuration for this project may apply.
+
+That's it! You now have your development environment set up for the project. Happy coding!
+
+<br />  
+
 <h2>File Structure</h2>
 
   ```
