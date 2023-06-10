@@ -25,6 +25,8 @@ Automated-AWS
 │   └── main.go
 ├── config
 │   └── aws.go
+├── mocks
+|   ├── elbv2_mock.go
 ├── pkg
 │   ├── autoscaling
 │   │   └── autoscaling.go
