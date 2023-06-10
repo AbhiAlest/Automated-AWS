@@ -1,0 +1,51 @@
+# AWS configurations
+aws:
+  region: us-west-2
+  credentials: default
+
+# EC2 configurations
+ec2:
+  imageId: ami-12345678
+  instanceType: t2.micro
+  minCount: 1
+  maxCount: 1
+  securityGroupIds:
+    - sg-12345678
+  subnetId: subnet-12345678
+
+# ELBv2 configurations
+elbv2:
+  name: MyLoadBalancer
+  subnets:
+    - subnet-12345678
+  securityGroups:
+    - sg-12345678
+  listeners:
+    - port: 80
+      protocol: HTTP
+      defaultActions:
+        - type: forward
+          targetGroupArn: arn:aws:elasticloadbalancing:us-west-2:123456789012:targetgroup/my-target-group/abcdef123456
+
+# Auto Scaling configurations
+autoscaling:
+  autoScalingGroupName: MyAutoScalingGroup
+  launchTemplate:
+    launchTemplateName: MyLaunchTemplate
+    version: $Latest
+  minSize: 1
+  maxSize: 5
+  desiredCapacity: 2
+  vpcZoneIdentifier: subnet-12345678
+  tags:
+    - key: Environment
+      value: Production
+      propagateAtLaunch: true
+    - key: Project
+      value: MyProject
+      propagateAtLaunch: true
+
+# Additional project configurations
+myProject:
+  option1: value1
+  option2: value2
