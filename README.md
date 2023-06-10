@@ -80,6 +80,7 @@ go test ./...
 ```
 
 <h3>Development Workflow</h3>
+
 1. Make the necessary code changes in the project files.
 2. Run the application or tests to verify your changes.
 3. Commit the changes to your local Git repository.
