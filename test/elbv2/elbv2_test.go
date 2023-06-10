@@ -102,6 +102,9 @@ func TestCreateLoadBalancer_Error(t *testing.T) {
 	}
 
 	// Additional assertions based on the expected error
-	// ...
+	if err != expectedError {
+		t.Errorf("Expected error: %v, but got: %v", expectedError, err)
+	}
 }
+
 
