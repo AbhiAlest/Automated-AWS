@@ -93,7 +93,8 @@ That's it! You now have your development environment set up for the project. Hap
 <br />  
 
 <h2>File Structure</h2>
-
+  
+  Rough overfiew of the file structure for this project. Please keep in mind that this file structure is not frequently updated (i.e changes have occurred). 
   ```
 Automated-AWS
 ├── cmd
