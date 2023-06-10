@@ -24,7 +24,7 @@ Make sure you have the following prerequisites installed on your system:
 
 * Go (version 1.16 or later)
 * Docker (optional, if you want to run the application in a container)
-* AWS CLI (optional, if you want to interact with AWS services)
+* AWS CLI (to interact with AWS services)
 
 <h3>Clone the Repository</h3>
 Clone the project repository from the GitHub repository:
