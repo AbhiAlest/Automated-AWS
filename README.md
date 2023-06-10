@@ -86,10 +86,7 @@ go test ./...
 4. Push the changes to the remote Git repository (if applicable).
 
 <h3>Additional Configuration</h3>
-Additional configuration for this project may apply. If you need to configure any project-specific settings, refer to the config package or the relevant configuration files in the project.
-
-<br/>
-Please note that the above instructions are a general guideline and may need to be adjusted based on your specific project requirements.
+Additional configuration for this project may apply. If you need to configure any project-specific settings, refer to the config package or the relevant configuration files in the project. Please note that the above instructions are a general guideline and may need to be adjusted based on your specific project requirements.
 
 <br/><br/>
 That's it! You now have your development environment set up for the project. Happy coding!
