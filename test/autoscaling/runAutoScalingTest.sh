@@ -4,7 +4,7 @@
 export AWS_REGION="us-west-2"
 export AWS_PROFILE="your-aws-profile"
 
-# Build and run the test
+# Build and run the test (check README for building using Docker)
 go test -v ./autoscaling_test.go
 
 # Unset environment variables
