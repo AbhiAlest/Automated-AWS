@@ -16,7 +16,7 @@
 
 <br />  
 
-<h2>Setting Up Development Environment</h2>
+<h2>Setting Up The Development Environment</h2>
 To set up the development environment for the project, follow the steps below:
 
 <h3>Prerequisites</h3>
