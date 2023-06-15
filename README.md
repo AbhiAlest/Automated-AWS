@@ -78,7 +78,7 @@ To run the tests, use the following command:
 go test ./...
 ```
 
-<h3>Running via Command Line Interface (CLI)<h3>
+<h3>Running via Command Line Interface (CLI)</h3>
 Use the command line for desired actions. Here are a few examples:
 
 ```bash
