@@ -78,6 +78,25 @@ To run the tests, use the following command:
 go test ./...
 ```
 
+<h3>Running via Command Line Interface (CLI)<h3>
+
+Use the command line for desired actions. Here are a few examples:
+
+```bash
+  # Create VPC
+go run main.go -create-vpc
+
+# Create S3 bucket
+go run main.go -create-s3-bucket
+
+# Launch 2 EC2 instances
+go run main.go -launch-ec2-instances=2
+
+# Create ALB
+go run main.go -create-alb
+```
+  
+
 <h3>Development Workflow</h3>
 
 1. Make the necessary code changes in the project files.
