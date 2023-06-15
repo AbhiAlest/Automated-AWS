@@ -98,10 +98,14 @@ That's it! You now have your development environment set up for the project. Hap
   Rough overfiew of the file structure for this project. Please keep in mind that this file structure is not frequently updated (i.e changes have occurred). 
   ```
 Automated-AWS
+├── .github
+│   └── CODEOWNERS
+│   └── CONTRIBUTING.md
 ├── cmd
 │   └── main.go
 ├── config
 │   └── aws.go
+│   └── config.yaml
 ├── mocks
 |   ├── elbv2_mock.go
 ├── pkg
@@ -118,6 +122,7 @@ Automated-AWS
 │   │   └── ec2_test.go
 │   └── elbv2
 │       └── elbv2_test.go
+├── Dockerfile
 ├── README.md
 └── LICENSE
 
