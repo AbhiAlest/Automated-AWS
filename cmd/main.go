@@ -1,9 +1,11 @@
 package main
 
 import (
+	"flag"
 	"fmt"
 	"log"
 	"os"
+	"strings"
 
 	"github.com/AbhiAlest/Automated-AWS/pkg/ec2"
 	"github.com/AbhiAlest/Automated-AWS/pkg/elbv2"
@@ -16,16 +18,31 @@ import (
 )
 
 func main() {
-	// Call the functions to create AWS resources
+	// Define command-line flags
+	createVPCFlag := flag.Bool("create-vpc", false, "Create VPC")
+	createS3BucketFlag := flag.Bool("create-s3-bucket", false, "Create S3 bucket")
+	launchEC2InstancesFlag := flag.Int("launch-ec2-instances", 0, "Launch EC2 instances")
+	createALBFlag := flag.Bool("create-alb", false, "Create ALB")
+	flag.Parse()
+
+	// Call the functions based on the provided flags
+	if *createVPCFlag {
+		createVPC()
+	}
+	if *createS3BucketFlag {
+		createS3Bucket()
+	}
+	if *launchEC2InstancesFlag > 0 {
+		launchEC2Instances(*launchEC2InstancesFlag)
+	}
+	if *createALBFlag {
+		createALB()
+	}
+
+	// Call the existing functions to create AWS resources
 	ec2.CreateEC2Instance()
 	elbv2.CreateLoadBalancer()
 	autoscaling.CreateAutoScalingGroup()
-
-	// Additional function calls or logic
-	createVPC()
-	createS3Bucket()
-	launchEC2Instances(2)
-	createALB()
 }
 
 func createVPC() {
