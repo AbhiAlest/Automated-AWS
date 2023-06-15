@@ -79,7 +79,6 @@ go test ./...
 ```
 
 <h3>Running via Command Line Interface (CLI)<h3>
-
 Use the command line for desired actions. Here are a few examples:
 
 ```bash
@@ -95,7 +94,6 @@ go run main.go -launch-ec2-instances=2
 # Create ALB
 go run main.go -create-alb
 ```
-  
 
 <h3>Development Workflow</h3>
 
