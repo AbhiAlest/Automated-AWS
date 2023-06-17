@@ -6,6 +6,7 @@ import (
 	"log"
 	"os"
 	"strings"
+	"sync"
 
 	"github.com/AbhiAlest/Automated-AWS/pkg/ec2"
 	"github.com/AbhiAlest/Automated-AWS/pkg/elbv2"
@@ -25,24 +26,56 @@ func main() {
 	createALBFlag := flag.Bool("create-alb", false, "Create ALB")
 	flag.Parse()
 
+	// Create a WaitGroup to wait for all Goroutines to finish
+	var wg sync.WaitGroup
+
 	// Call the functions based on the provided flags
 	if *createVPCFlag {
-		createVPC()
+		wg.Add(1)
+		go func() {
+			defer wg.Done()
+			createVPC()
+		}()
 	}
 	if *createS3BucketFlag {
-		createS3Bucket()
+		wg.Add(1)
+		go func() {
+			defer wg.Done()
+			createS3Bucket()
+		}()
 	}
 	if *launchEC2InstancesFlag > 0 {
-		launchEC2Instances(*launchEC2InstancesFlag)
+		wg.Add(1)
+		go func() {
+			defer wg.Done()
+			launchEC2Instances(*launchEC2InstancesFlag)
+		}()
 	}
 	if *createALBFlag {
-		createALB()
+		wg.Add(1)
+		go func() {
+			defer wg.Done()
+			createALB()
+		}()
 	}
 
 	// Call the existing functions to create AWS resources
-	ec2.CreateEC2Instance()
-	elbv2.CreateLoadBalancer()
-	autoscaling.CreateAutoScalingGroup()
+	wg.Add(3)
+	go func() {
+		defer wg.Done()
+		ec2.CreateEC2Instance()
+	}()
+	go func() {
+		defer wg.Done()
+		elbv2.CreateLoadBalancer()
+	}()
+	go func() {
+		defer wg.Done()
+		autoscaling.CreateAutoScalingGroup()
+	}()
+
+	// Wait for all Goroutines to finish
+	wg.Wait()
 }
 
 func createVPC() {
