@@ -1,4 +1,4 @@
-package config
+package config //Specific configurations found in config.yaml
 
 import (
 	"github.com/aws/aws-sdk-go/aws/credentials"
