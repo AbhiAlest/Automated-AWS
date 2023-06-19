@@ -1,3 +1,5 @@
+# For additional instructions, view the README.md for this project.
+
 # Use the official Golang image as the base image
 FROM golang:1.16-alpine
 
