@@ -19,7 +19,7 @@ import (
 )
 
 func main() {
-	// Define command-line flags
+	// Define command-line flags, see more in README
 	createVPCFlag := flag.Bool("create-vpc", false, "Create VPC")
 	createS3BucketFlag := flag.Bool("create-s3-bucket", false, "Create S3 bucket")
 	launchEC2InstancesFlag := flag.Int("launch-ec2-instances", 0, "Launch EC2 instances")
