@@ -18,6 +18,21 @@ import (
 	"github.com/aws/aws-sdk-go/service/autoscaling"
 )
 
+var (
+	logger *log.Logger
+)
+
+func init() {
+	// Initialize the logger
+	logFile, err := os.OpenFile("app.log", os.O_CREATE|os.O_WRONLY|os.O_APPEND, 0666)
+	if err != nil {
+		fmt.Println("Failed to open log file:", err)
+		os.Exit(1)
+	}
+	logger = log.New(logFile, "", log.Ldate|log.Ltime|log.Lshortfile)
+}
+
+
 func main() {
 	// Define command-line flags, see more in README
 	createVPCFlag := flag.Bool("create-vpc", false, "Create VPC")
@@ -27,37 +42,70 @@ func main() {
 	flag.Parse()
 
 	// Create a WaitGroup to wait for all Goroutines to finish
-	var wg sync.WaitGroup
+		var wg sync.WaitGroup
 
 	// Call the functions based on the provided flags
 	if *createVPCFlag {
 		wg.Add(1)
 		go func() {
 			defer wg.Done()
-			createVPC()
+			if err := createVPC(); err != nil {
+				logger.Println("Error creating VPC:", err)
+			}
 		}()
 	}
 	if *createS3BucketFlag {
 		wg.Add(1)
 		go func() {
 			defer wg.Done()
-			createS3Bucket()
+			if err := createS3Bucket(); err != nil {
+				logger.Println("Error creating S3 bucket:", err)
+			}
 		}()
 	}
 	if *launchEC2InstancesFlag > 0 {
 		wg.Add(1)
 		go func() {
 			defer wg.Done()
-			launchEC2Instances(*launchEC2InstancesFlag)
+			if err := launchEC2Instances(*launchEC2InstancesFlag); err != nil {
+				logger.Println("Error launching EC2 instances:", err)
+			}
 		}()
 	}
 	if *createALBFlag {
 		wg.Add(1)
 		go func() {
 			defer wg.Done()
-			createALB()
+			if err := createALB(); err != nil {
+				logger.Println("Error creating ALB:", err)
+			}
 		}()
 	}
+
+	// Call the existing functions to create AWS resources
+	wg.Add(3)
+	go func() {
+		defer wg.Done()
+		if err := ec2.CreateEC2Instance(); err != nil {
+			logger.Println("Error creating EC2 instance:", err)
+		}
+	}()
+	go func() {
+		defer wg.Done()
+		if err := elbv2.CreateLoadBalancer(); err != nil {
+			logger.Println("Error creating load balancer:", err)
+		}
+	}()
+	go func() {
+		defer wg.Done()
+		if err := autoscaling.CreateAutoScalingGroup(); err != nil {
+			logger.Println("Error creating auto scaling group:", err)
+		}
+	}()
+
+	// Wait for all Goroutines to finish
+	wg.Wait()
+}
 
 	// Call the existing functions to create AWS resources
 	wg.Add(3)
