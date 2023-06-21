@@ -80,7 +80,6 @@ go test ./...
 
 <h3>Running via Command Line Interface (CLI)</h3>
 Use the command line for desired actions. Here are a few examples to get started:
-
 ```bash
 # Create VPC
 go run main.go -create-vpc
