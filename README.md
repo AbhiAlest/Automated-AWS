@@ -112,7 +112,7 @@ That's it! You now have your development environment set up for the project. Hap
 
 <h2>File Structure</h2>
   
-  Rough overview of the file structure for this project. Please keep in mind that this file structure is not frequently updated (i.e changes have occurred). 
+  Rough overview of the file structure for this project (changes may have occurred). 
   ```
 Automated-AWS
 ├── .github
