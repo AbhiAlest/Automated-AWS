@@ -45,3 +45,5 @@ We encourage you to join our community and connect with other contributors. Feel
 We appreciate your interest in contributing to Automated-AWS and look forward to your valuable contributions!
 
 Happy coding!
+
+*Feel free to contribute to documentation.*
