@@ -23,7 +23,12 @@ To set up the development environment for the project, follow the steps below:
 Make sure you have the following prerequisites installed on your system:
 
 * Go (version 1.16 or later)
-* Cobra 
+* Cobra
+  
+  ```bash
+  go get -u github.com/spf13/cobra
+
+  ```
 * Docker (optional, if you want to run the application in a container)
 * AWS CLI (to interact with AWS services)
 
