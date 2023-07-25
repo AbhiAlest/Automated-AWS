@@ -7,6 +7,7 @@ import (
 	"os"
 	"strings"
 	"sync"
+	"github.com/spf13
 
 	"github.com/AbhiAlest/Automated-AWS/pkg/ec2"
 	"github.com/AbhiAlest/Automated-AWS/pkg/elbv2"
@@ -34,6 +35,30 @@ func init() {
 
 
 func main() {
+	// cobra
+
+	var rootCmd = &cobra.Command{
+		Use:   "automated-aws",
+		Short: "Automated-AWS is an open-source Go package that automates provisioning/management of AWS resources (ec2, elbv2, and autoscaling).",
+	}
+
+	var createEC2Cmd = &cobra.Command{
+		Use:   "create-ec2",
+		Short: "Create an EC2 instance",
+		Run: func(cmd *cobra.Command, args []string) {
+			createEC2Instance()
+		},
+	}
+
+	rootCmd.AddCommand(createEC2Cmd)
+
+	if err := rootCmd.Execute(); err != nil {
+		fmt.Println(err)
+		os.Exit(1)
+	}
+	
+	
+	
 	// Define command-line flags, see more in README
 	createVPCFlag := flag.Bool("create-vpc", false, "Create VPC")
 	createS3BucketFlag := flag.Bool("create-s3-bucket", false, "Create S3 bucket")
@@ -216,6 +241,34 @@ func launchEC2Instances(numInstances int) {
 
 	fmt.Printf("Launched %d EC2 instances\n", numInstances)
 }
+
+func createEc2Instance(imageID, instanceType string) error {
+	sess, err := session.NewSession(&aws.Config{
+		Region: aws.String("us-west-2"),
+	})
+	if err != nil {
+		return err
+	}
+
+	// Create an EC2 instance
+	ec2Client := ec2.New(sess)
+	runInstancesInput := &ec2.RunInstancesInput{
+		ImageId:      aws.String(imageID),
+		InstanceType: aws.String(instanceType),
+		MinCount:     aws.Int64(1),
+		MaxCount:     aws.Int64(1),
+	}
+
+	_, err = ec2Client.RunInstances(runInstancesInput)
+	if err != nil {
+		return err
+	}
+
+	fmt.Println("EC2 instance created successfully")
+	return nil
+}
+
+
 
 func createALB() {
 	sess, err := session.NewSession(&aws.Config{
