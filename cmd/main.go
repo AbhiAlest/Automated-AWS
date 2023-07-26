@@ -7,7 +7,7 @@ import (
 	"os"
 	"strings"
 	"sync"
-	"github.com/spf13
+	"github.com/spf13"
 
 	"github.com/AbhiAlest/Automated-AWS/pkg/ec2"
 	"github.com/AbhiAlest/Automated-AWS/pkg/elbv2"
