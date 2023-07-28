@@ -50,7 +50,34 @@ func main() {
 		},
 	}
 
+	var elbv2Cmd = &cobra.Command{
+		Use:   "elbv2",
+		Short: "Manage Elastic Load Balancer v2",
+	}
+
+	var createELBCmd = &cobra.Command{
+		Use:   "create",
+		Short: "Create a new Elastic Load Balancer",
+		Run: func(cmd *cobra.Command, args []string) {
+			createELB()
+		},
+	}
+
+	var deleteELBCmd = &cobra.Command{
+		Use:   "delete",
+		Short: "Delete an existing Elastic Load Balancer",
+		Run: func(cmd *cobra.Command, args []string) {
+			deleteELB()
+		},
+	}
+
+
+
 	rootCmd.AddCommand(createEC2Cmd)
+	elbv2Cmd.AddCommand(createELBCmd, deleteELBCmd)
+	rootCmd.AddCommand(elbv2Cmd)
+
+
 
 	if err := rootCmd.Execute(); err != nil {
 		fmt.Println(err)
@@ -150,6 +177,36 @@ func main() {
 	// Wait for all Goroutines to finish
 	wg.Wait()
 }
+
+func createELB() {
+	// Call the existing CreateLoadBalancer() function
+	elbv2.CreateLoadBalancer()
+}
+
+func deleteELB() {
+	sess, err := session.NewSession(&aws.Config{
+		Region: aws.String(config.AWSRegion),
+	})
+	if err != nil {
+		panic(err)
+	}
+
+	svc := elbv2.New(sess)
+
+	// Input parameters for deleting the load balancer
+	deleteInput := &elbv2.DeleteLoadBalancerInput{
+		LoadBalancerArn: aws.String("arn:aws:elasticloadbalancing:us-west-2:123456789012:loadbalancer/app/MyLoadBalancer/abcdef123456"), // Replace with the ARN of the load balancer you want to delete
+	}
+
+	_, err = svc.DeleteLoadBalancer(deleteInput)
+	if err != nil {
+		panic(err)
+	}
+
+	fmt.Println("Load balancer deleted")
+}
+
+
 
 func createVPC() {
 	sess, err := session.NewSession(&aws.Config{
